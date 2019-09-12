@@ -1,0 +1,28 @@
+<div class="card">
+  <div class="card-header bg-secondary text-light">
+    Template Form Component
+  </div>
+  <div class="card-body">
+    <h4 class="card-title">Fill in Details</h4>
+    <form #f="ngForm" (ngsubmit)="submit()">
+      <div class="form-group">
+        <label for="email">Email address</label>
+        <input ngModel name="email" #email="ngModel" type="text" required minlength="3" maxlength="10" pattern="[A-z]+"
+          (change)="setEmail(email)" class="form-control" id="email" aria-describedby="emailHelp"
+          placeholder="Enter email">
+        <div class="alert alert-danger" role="alert" *ngIf="email.touched && !email.valid">
+          <div *ngIf="email.errors.required">This is a required field</div>
+          <div *ngIf="email.errors.minlength">Minimum 3 characters required</div>
+          <div *ngIf="email.errors.pattern">Doesn't match the pattern</div>
+        </div>
+        <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+      </div>
+      <div class="form-group">
+        <label for="password">Password</label>
+        <input ngModel name="password" #password="ngModel" (change)="setPassword(password)" type="password"
+          class="form-control" id="password" placeholder="Password">
+      </div>
+      <button type="submit"[disabled]="!f.valid" class="btn btn-primary">Submit</button>
+    </form>
+  </div>
+</div>

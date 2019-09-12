@@ -1,0 +1,25 @@
+<div class="card">
+  <div class="carousel slide card-img-top" data-ride="carousel">
+    <div class="carousel-inner" role="listbox">
+      <div class="carousel-item w-100 active">
+        <img [src]="imgsrc1" class ="w-100" alt="First slide">
+      </div>
+      <div class="carousel-item w-100">
+        <img [src]="imgsrc2" class ="w-100" alt="Second slide">
+      </div>
+      <div class="carousel-item w-100">
+        <img [src]="imgsrc3" class ="w-100" alt="Third slide">
+      </div>
+    </div>
+  </div>
+  <!-- <img [src]="imgsrc" class="card-img-top">
+  <img [src]="imgsrc1" class="card-img-top"> -->
+  <div class="card-header bg-secondary text-light">
+    Demo Component
+  </div>
+  <div (click)="onDivClick($event)" class="card-body">
+    <h4 class="card-title">Demo Component</h4>
+    <p class="card-text">{{titles}}</p>
+    <button (click)="onButtonClick($event)" type="button" class="btn btn-success" [class.active]="isActive">Active or Not</button>
+  </div>
+</div>

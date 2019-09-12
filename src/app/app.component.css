@@ -1,0 +1,14 @@
+.main-img {
+  background: url("../assets/mainbg.png") no-repeat center center;
+  background-color: rgba(0, 0, 0, 0.6);
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  background-blend-mode: multiply
+  /* background: url("../assets/mainbg.png") fixed no-repeat; */
+}
+
+div{
+  color: brown !important;
+}

@@ -1,0 +1,13 @@
+<div (click)="sendEvent($event)" class="card-text mb-3" ng-if="students">
+  <div class="row" *ngFor="let student of students">
+    <div class="col-4">
+      {{student.name}}
+    </div>
+    <div [class]="'col-4 ' + student.cssM">
+      {{student.maths}}
+    </div>
+    <div [class]="'col-4 ' + student.cssP">
+      {{student.physics}}
+    </div>
+  </div>
+</div>

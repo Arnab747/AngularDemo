@@ -1,0 +1,29 @@
+<div class="card">
+  <div class="card-header bg-secondary text-light">
+    Reactive Form Component
+  </div>
+  <div class="card-body">
+    <h4 class="card-title">Fill in Details</h4>
+    <form [formGroup]="form" (ngSubmit)="submit(form)">
+      <div class="form-group">
+        <label for="email">Email address</label>
+        <input formControlName="email" class="form-control" id="email" aria-describedby="emailHelp"
+          placeholder="Enter email">
+        <div class="alert alert-danger" role="alert" *ngIf="form.touched && !form.valid">
+          <div *ngIf="form.controls.email.errors.required">Email is a required field</div>
+          <div *ngIf="form.controls.email.errors.minlength">Minimum 3 characters required for Email</div>
+          <div *ngIf="form.controls.email.errors.pattern">Email doesn't match the pattern</div>
+          <div *ngIf="form.controls.email.errors.cannotContainSpace">Email cannot contain space</div>
+          <div *ngIf="form.controls.password.errors.required">Password is required</div>
+        </div>
+        <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+      </div>
+      <div class="form-group">
+        <label for="password">Password</label>
+        <input formControlName="password" name="password" type="password" class="form-control" id="password"
+          placeholder="Password">
+      </div>
+      <button type="submit" [disabled]="!form.valid" class="btn btn-primary">Submit</button>
+    </form>
+  </div>
+</div>

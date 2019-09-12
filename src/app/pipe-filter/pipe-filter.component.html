@@ -1,0 +1,16 @@
+<div class="card">
+    <div class="card-header bg-secondary text-light">
+        Filters
+    </div>
+    <div class="card-body">
+        <h4 class="card-title">Angular built-in Filters</h4>
+        <p class="card-text">{{feeds.title | uppercase}}</p>
+        <p class="card-text">{{feeds.rating | number:"2.1-1"}}</p>
+        <p class="card-text">{{feeds.students | number}}</p>
+        <p class="card-text">{{feeds.price | currency:"AUD"}}</p>
+        <hr class="my-2">
+        <h4 class="card-title">Angular Custom Filters</h4>
+        <p class="card-text">{{feeds.text | summary:200}}</p>
+        <p class="card-text">{{feeds.text | titleCase}}</p>
+    </div>
+</div>

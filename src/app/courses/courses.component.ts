@@ -5,6 +5,7 @@ import { DemoService } from '../services/demo.service';
   selector: 'app-courses',
   templateUrl: './courses.component.html',
   styleUrls: ['./courses.component.css'],
+  providers: [DemoService],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class CoursesComponent implements OnInit {
